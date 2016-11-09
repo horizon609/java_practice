@@ -38,7 +38,7 @@ public class Leetcode128 {
             int temp = nums[i];
             while (hs.contains(temp)) {
                 ++count;
-                hs.remove(temp);//注意移除hashset中的元素，否则时间复杂度会超过o(n)
+                hs.remove(temp);//注意移除hashset中的元素，否则时间复杂度会超过o(n)。hashset初始桶数是16，而leetcode一般给的用例的int数组都超级大，故hashset中有大量冲突。查找起来效率很低。
                 --temp;
             }
             temp = nums[i] + 1;
