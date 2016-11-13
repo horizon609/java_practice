@@ -17,13 +17,16 @@ public class LeetCode84 {
 
     /**
      * 思路：分析题意可以直观的看出，选中的那个柱高度，比它左右延伸的柱要低。这时可以把左右这个思想转换成两个数组，每个下标分别记录的是当前柱高往左/右延伸的长度（当前下标所代表的柱高低于左/右下标）
-     * 第一步：分别求出左/右下标两个数组 第二部遍历柱高数组，用其高度乘以宽度（相应下标右＋左-1），选出最大值即可
+     * 第一步：分别求出左/右下标两个数组 第二部遍历柱高数组
+     * 第二部：用其高度乘以宽度（相应下标右＋左-1），选出最大值即可
      * 需要注意的是求左右数组的时候，应该从最边界开始累计计算。
+     * 边界条件！！
      * 
      * @param heights
      * @return
      */
     public static int largestRectangleArea(int[] heights) {
+        if(heights == null||heights.length == 0) return 0;
         int len = heights.length;
         int[] rightArr = new int[len];
         int[] leftArr = new int[len];
