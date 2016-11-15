@@ -51,7 +51,7 @@ public class Leetcode410 {
         if(m <= 1) return high;
         int mid = low;
         int cur = 0;
-        while(low < high){
+        while(low < high){  //<=中的=可以省略，因为最坏的情况是low+1 == high，可以试从两边推进去思考，优化到底。
             mid = (high + low)/2;
             int count = 1;
             cur = 0;
