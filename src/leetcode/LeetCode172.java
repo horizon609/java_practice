@@ -25,7 +25,7 @@ public class LeetCode172 {
      * 26的阶乘：26*25*24*23*22
      * *21*20*19*18*17*16*15*14*13*12*11*10*9*8*7*6*5*4*3*2*1 ->(5^6...)，f(26) =
      * floor(5) + floor(25) 那么可以推到算法公式：n！末尾的0的个数 = f(n) = floor(n/5) +
-     * floor(n/25) + floor(n/125) + ... 推到这一步就可以开始动手写代码了 ... 写完了发现代码只有7行。
+     * floor(n/25) + floor(n/125) + ... 推到这一步就可以开始动手写代码了 ... 写完了发现代码只有6行。
      * 考验数学的推倒功底，注意加强
      */
 
@@ -37,24 +37,16 @@ public class LeetCode172 {
         // factorial(i);
         // System.out.println();
         // }
-        System.out.println(trailingZeroes(1808548329));
+        System.out.println(trailingZeroes(625));
     }
 
     private static int trailingZeroes(int n) {
-//         int factor = 5;
-//         int res = 0;
-//         if(n == 5) return 1;
-//         while(n > factor){ //注意一定得有 =，否则n==5返回0
-//         res += n/factor;
-//         factor = factor * 5;
-//         }
-//         return res;
-        int res = 0;
-        while (n > 1) {
-            res += n / 5;
-            n /= 5;
-        }
-        return res;
+         int res = 0;
+         while (n > 1) {
+         res += n / 5;
+         n /= 5;
+         }
+         return res;
     }
 
     private static BigInteger factorial(int n) {
