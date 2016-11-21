@@ -57,7 +57,7 @@ public class LeetCode78 {
         res.add(new ArrayList<Integer>(temp));
         for(int j = i; j < nums.length;j++){
             temp.add(nums[j]);
-            dfs(res,temp,nums,i+1);
+            dfs(res,temp,nums,j+1);
             temp.remove(temp.size() - 1);
         }
     }  
