@@ -13,6 +13,21 @@ import java.util.List;
  */
 public class Leetcode77 {
     /**
+     * Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
+
+For example,
+If n = 4 and k = 2, a solution is:
+
+[
+  [2,4],
+  [3,4],
+  [2,3],
+  [1,2],
+  [1,3],
+  [1,4],
+]
+     */
+    /**
      * 最近已经碰到好几个这种dfs+回溯的套路了，只要理解了原理，这一类的问题就迎刃而解了。
      */
     /**
