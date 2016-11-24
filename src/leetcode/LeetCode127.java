@@ -43,6 +43,7 @@ All words contain only lowercase alphabetic characters.
      * 注：Set里是不会有重复值的
      * 搜索最小路径，通常使用BFS：http://www.cnblogs.com/developerY/p/3323264.html
      * 参考http://www.cnblogs.com/jianxinzhou/p/4515287.html
+     * http://blog.csdn.net/zdavb/article/details/48135823
      * 完全理解BFS后，解决这个问题就不会存在任何问题了。
      * @param beginWord
      * @param endWord
