@@ -11,6 +11,9 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Given a collection of intervals, merge all overlapping intervals. For
+ * example, Given [1,3],[2,6],[8,10],[15,18], return [1,6],[8,10],[15,18].
+ * 
  * @author echoplex_x email:wangting-xy@360.cn
  * @date 2016年12月7日
  */
@@ -35,6 +38,11 @@ public class LeetCode56 {
         System.out.println(merge(non));
     }
 
+    /**
+     * 注意边界条件
+     * @param intervals
+     * @return
+     */
     public static List<Interval> merge(List<Interval> intervals) {
         if (intervals == null)
             return null;
@@ -52,13 +60,13 @@ public class LeetCode56 {
         for (Interval interval : intervals) {
             if (interval.start <= e) {
                 e = max(e, interval.end);
-            }else{
+            } else {
                 res.add(new Interval(s, e));
                 s = interval.start;
                 e = interval.end;
             }
         }
-        res.add(new Interval(s,e));
+        res.add(new Interval(s, e));
         return res;
     }
 
