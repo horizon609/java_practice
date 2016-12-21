@@ -27,7 +27,7 @@ public class Leetcode45 {
     /**
      * 自己的想法：结果不出所料超时，当输入为[1,1,1,1,1.....1,1,1,1,]时，但是你题上又没说需要考虑时间复杂度啊喂！我算是发现了..
      * 以后我提交的答案再也不提交o(n^2)的方案了！ 但是我还是记录一下吧。
-     * 1.有一个伪步数表，从倒数第二个位置开始往前，一次跳到最后一个位置所需要的步数
+     * 1.有一个伪步数表，从倒数第二个位置开始往前，一次跳到最后一个位置所需要的步数[...,3,2,1,0]
      * 2.hashtable：如果nums相应位置内的值>=上表，则hashtable[index] = true。 //
      * 3.从左到右依次轮训，找到第一个true，然后从该值的前一个index重新处理1中的伪步数表
      * 
@@ -86,14 +86,14 @@ public class Leetcode45 {
     
     public static int jump(int[] nums) {
         int len = nums.length;
-//        int start = 0;
+        // int start = 0;
         int end = 0;
         int max = 0;
         int count = 0;
-        for(int i = 0; i < len - 1; i++){
+        for (int i = 0; i < len - 1; i++) {
             max = Math.max(max, i + nums[i]);
-            if(i==end) {
-//                start = end + 1;
+            if (i == end) {
+                // start = end + 1;
                 end = max;
                 count++;
             }
