@@ -7,18 +7,29 @@ package leetcode;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-
 /**
- * 一开始的想法：1.构建一个HashMap,把nums里的值作为KEY，把下标作为VALUE。
- * 2.将nums排序为array
- * 3.low和high分别指向array的首和尾
- * 4.找到low和high值
- * 5.在hashMap中查找nums[low]、nums[high]的值
- * 然后跪在在测试用例：[0,4,3,0] 0 正确返回：[0,3] 真实返回：[3,3].因为忽略了hashmap里不能有重复键这一点。
- * @author echoplex_x email:wangting-xy@360.cn
- * @date 2016年12月13日
+ * Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+
+You may assume that each input would have exactly one solution.
+
+Example:
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
  */
+
 public class LeetCode1 {
+    /**
+     * 一开始的想法：1.构建一个HashMap,把nums里的值作为KEY，把下标作为VALUE。
+     * 2.将nums排序为array
+     * 3.low和high分别指向array的首和尾
+     * 4.找到low和high值
+     * 5.在hashMap中查找nums[low]、nums[high]的值
+     * 然后跪在在测试用例：[0,4,3,0] 0 正确返回：[0,3] 真实返回：[3,3].因为忽略了hashmap里不能有重复键这一点。
+     * @author echoplex_x email:wangting-xy@360.cn
+     * @date 2016年12月13日
+     */
     public static int[] twoSum(int[] nums, int target) {
         int [] res = new int[2];
         HashMap<Integer, Integer> hashMap = new HashMap<Integer, Integer>();
